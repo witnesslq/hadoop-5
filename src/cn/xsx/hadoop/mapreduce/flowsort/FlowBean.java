@@ -1,13 +1,14 @@
-package cn.xsx.hadoop.mapreduce.flowsum;
+package cn.xsx.hadoop.mapreduce.flowsort;
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
 import org.apache.hadoop.io.Writable;
+import org.apache.hadoop.io.WritableComparable;
 import org.apache.jasper.tagplugins.jstl.core.Out;
 
-public class FlowBean implements Writable {
+public class FlowBean implements WritableComparable<FlowBean> {
 	
 	private String phoneNB;
 	private long up_flow;
@@ -89,6 +90,11 @@ public class FlowBean implements Writable {
 	@Override
 	public String toString() {
 		return "" + up_flow + "\t" + down_flow + "\t" + sum_flow ;
+	}
+
+	@Override
+	public int compareTo(FlowBean flowBean) {
+		return sum_flow>flowBean.getSum_flow()?-1:1;
 	}
 	
 	
