@@ -59,7 +59,7 @@ public class HdfsUtil {
 	public void upload2() throws Exception{
 		fs.mkdirs(new Path("/系统镜像"));
 		//fs.copyFromLocalFile(new Path("C:/Users/xusha/Desktop/大数据+云计算（30多套教程打包珍藏版）.txt"), new Path("hdfs://hadoop:9000/test/大数据资料.txt"));
-		fs.copyFromLocalFile(new Path("F:/系统镜像/cn_windows_8.1_with_update_x64_dvd_4048046.iso"), new Path("hdfs://hadoop:9000/系统镜像/win8.1.iso"));
+		fs.copyFromLocalFile(new Path("f:/cn_windows_8.1_with_update_x64_dvd_4048046.iso"), new Path("hdfs://hadoop:9000/winiso/win8.1.iso"));
 	}
 	
 	/**
